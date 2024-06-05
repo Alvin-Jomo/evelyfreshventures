@@ -11,9 +11,6 @@ from useradmin.forms import AddProductForm
 from useradmin.decorators import admin_required
 
 import datetime
-
-
-
 @admin_required
 def dashboard(request):
     revenue = CartOrder.objects.aggregate(price=Sum("price"))
